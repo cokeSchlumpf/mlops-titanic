@@ -1,0 +1,19 @@
+md5: b5b2c46b486c12b03c219a2b2d371b13
+cmd: kaggle competitions download -c titanic
+wdir: ../data
+outs:
+- md5: b56943b6ee3d9af0913ee5dd83b3d729
+  path: gender_submission.csv
+  cache: true
+  metric: false
+  persist: false
+- md5: 029c9cd22461f6dbe8d9ab01def965c6
+  path: test.csv
+  cache: true
+  metric: false
+  persist: false
+- md5: 61fdd54abdbf6a85b778e937122e1194
+  path: train.csv
+  cache: true
+  metric: false
+  persist: false
