@@ -1,3 +1,5 @@
 /gender_submission.csv
 /test.csv
 /train.csv
+/train_prepared.pkl
+/test_prepared.pkl
