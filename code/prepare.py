@@ -4,11 +4,6 @@ import numpy as np
 train = pd.read_csv('../data/train.csv')
 test = pd.read_csv('../data/test.csv')
 
-# Drop fields which might be not useful for prediction at all
-train = train.drop(['Ticket', 'Cabin'], axis=1)
-test = test.drop(['Ticket', 'Cabin'], axis=1)
-
-# Extract the title of the persons as this might be interesting
 def extract_title(df):
     """
     Extract the title from the name field. We assume that a word ending with period is a title.
@@ -83,35 +78,22 @@ def ordinal_to_numbers(df, column, column_new = None):
     df[column_new] = df[column].map(lambda value: np.where(values == value)[0][0])
     return df
 
-train = extract_title(train)
-test = extract_title(test)
+def prepare(df):
+    df = extract_title(df)
+    df = ordinal_to_numbers(df, 'Title')
+    df = ordinal_to_numbers(df, 'Sex')
+    df = fillna_most_frequent(df, 'Embarked')
+    df = ordinal_to_numbers(df, 'Embarked')
+    df = fillna_median(df, 'Fare')
+    df = continuous_to_ordinal(df, 4, 'Fare')
+    df = continuous_to_ordinal(df, 5, 'Age')
+    df = df.drop(['Name', 'Ticket', 'Cabin'], axis = 1)
+    df = calculate_family_size(df)
 
-train = ordinal_to_numbers(train, 'Title')
-test = ordinal_to_numbers(test, 'Title')
+    return df
 
-train = ordinal_to_numbers(train, 'Sex')
-test = ordinal_to_numbers(test, 'Sex')
-
-train = fillna_most_frequent(train, 'Embarked')
-test = fillna_most_frequent(test, 'Embarked')
-
-train = ordinal_to_numbers(train, 'Embarked')
-test = ordinal_to_numbers(test, 'Embarked')
-
-train = fillna_median(train, 'Fare')
-test = fillna_median(test, 'Fare')
-
-train = continuous_to_ordinal(train, 4, 'Fare')
-test = continuous_to_ordinal(test, 4, 'Fare')
-
-train = continuous_to_ordinal(train, 5, 'Age')
-test = continuous_to_ordinal(test, 5, 'Age')
-
-train = train.drop(['Name'], axis = 1)
-test = test.drop(['Name'], axis = 1)
-
-train = calculate_family_size(train)
-test = calculate_family_size(test)
+train = prepare(train)
+test = prepare(test)
 
 train.to_pickle('../data/train_prepared.pkl')
 test.to_pickle('../data/test_prepared.pkl')
