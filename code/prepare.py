@@ -61,7 +61,7 @@ def continuous_to_ordinal(df, groups, column, column_new = None):
     if column_new is None:
         column_new = column
 
-    df[column_new] = pd.qcut(df[column], groups)
+    df[column_new] = pd.qcut(df[column], groups, duplicates = 'drop')
     df = ordinal_to_numbers(df, column, column_new)
     return df
 
@@ -85,6 +85,7 @@ def prepare(df):
     df = fillna_most_frequent(df, 'Embarked')
     df = ordinal_to_numbers(df, 'Embarked')
     df = fillna_median(df, 'Fare')
+    df = fillna_median(df, 'Age')
     df = continuous_to_ordinal(df, 4, 'Fare')
     df = continuous_to_ordinal(df, 5, 'Age')
     df = df.drop(['Name', 'Ticket', 'Cabin'], axis = 1)

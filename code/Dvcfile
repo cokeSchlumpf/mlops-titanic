@@ -1,0 +1,12 @@
+md5: 3adf8de864be687c678ef83b1742ec6b
+cmd: python train.py
+wdir: .
+deps:
+- md5: 188b5570b3dc41ff994da37dcb324613
+  path: ../dvc/02-prepare-data.dvc
+outs:
+- md5: bafb81e41f66de16e50c45906b6d3615
+  path: ../data/metrics.json
+  cache: true
+  metric: true
+  persist: false
