@@ -1,0 +1,15 @@
+artifact_uri: ../mlruns/0/8913326263184de3ab1887c49d2f8588/artifacts
+end_time: 1567422125766
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+name: ''
+run_id: 8913326263184de3ab1887c49d2f8588
+run_uuid: 8913326263184de3ab1887c49d2f8588
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1567422125550
+status: 3
+tags: []
+user_id: michael

@@ -1,8 +1,8 @@
-md5: 60a5c976a5bae047db746dbf7462ff1a
+md5: 2473c3b5b92faeaf8c28dcf3a0eb3e74
 cmd: python train.py
 wdir: code
 deps:
-- md5: 4fa7000683582613e257848b0e6b2b3b
+- md5: d2cc78aa52d34a94b3bd19cefb6ec722
   path: train.py
 - md5: 7378f74e8b1a673a9ea2236382ffafed
   path: ../data/train_prepared.pkl
