@@ -1,6 +1,6 @@
-md5: 3adf8de864be687c678ef83b1742ec6b
+md5: 5bd641c9078827600990d4fdac432687
 cmd: python train.py
-wdir: .
+wdir: code
 deps:
 - md5: 188b5570b3dc41ff994da37dcb324613
   path: ../dvc/02-prepare-data.dvc
