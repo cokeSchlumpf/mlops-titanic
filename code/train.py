@@ -31,7 +31,7 @@ with mlflow.start_run():
     max_iter = 1000 # Might passed from command line arg....
 
     mlflow.log_param('lr.max_iter', max_iter)
-    mlflow.log_param('some-other-value', 'foo bar')
+    mlflow.log_param('some-other-value', 'foo bar ...')
 
     # Logistic Regression
     logreg = LogisticRegression(solver='lbfgs', max_iter = max_iter)
