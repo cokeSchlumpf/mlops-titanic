@@ -1,0 +1,4 @@
+['remote "fs"']
+url = /Users/michael/Downloads/dvc-remote
+[core]
+remote = fs

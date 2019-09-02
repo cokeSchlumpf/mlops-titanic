@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import time
 
 train = pd.read_csv('../data/train.csv')
 test = pd.read_csv('../data/test.csv')
@@ -88,7 +89,7 @@ def prepare(df):
     df = fillna_median(df, 'Age')
     df = continuous_to_ordinal(df, 4, 'Fare')
     df = continuous_to_ordinal(df, 5, 'Age')
-    df = df.drop(['Name', 'Ticket', 'Cabin', 'PassengerId'], axis = 1)
+    df = df.drop(['Name', 'Ticket', 'Cabin'], axis = 1)
     df = calculate_family_size(df)
 
     return df

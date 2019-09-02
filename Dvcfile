@@ -1,13 +1,13 @@
-md5: cccdc49b28863d3c11405011ceb896a2
+md5: b3a3bd198ed26b6c286235890de1360e
 cmd: python train.py
 wdir: code
 deps:
-- md5: ef66a48cab96664a8f3404b6a185ad24
+- md5: 7378f74e8b1a673a9ea2236382ffafed
   path: ../data/train_prepared.pkl
-- md5: 9c7fdcb7911e96022c6d616d47d33bee
+- md5: 6fac4b5e7a012fb52254919dfca5a835
   path: ../data/test_prepared.pkl
 outs:
-- md5: 098bbfe93081ec84e7f38bbc2091d512
+- md5: bafb81e41f66de16e50c45906b6d3615
   path: ../data/metrics.json
   cache: true
   metric: true
