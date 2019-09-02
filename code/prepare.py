@@ -98,7 +98,3 @@ test = prepare(test)
 
 train.to_pickle('../data/train_prepared.pkl')
 test.to_pickle('../data/test_prepared.pkl')
-
-print(train.head())
-print('------')
-print(test.head())
