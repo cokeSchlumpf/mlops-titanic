@@ -1,4 +1,4 @@
-md5: 1ea9c30b07a6897984d16a61e4339fe7
+md5: b8fca73695be8abbab652f05d55a43ca
 cmd: python prepare.py
 wdir: ../code
 deps:
@@ -6,15 +6,15 @@ deps:
   path: ../data/train.csv
 - md5: 029c9cd22461f6dbe8d9ab01def965c6
   path: ../data/test.csv
-- md5: 1e567cf12be07fe32a9cabbc4456e62c
+- md5: cf863255231ce5bf2d14a4961d119bab
   path: prepare.py
 outs:
-- md5: 7378f74e8b1a673a9ea2236382ffafed
+- md5: ef66a48cab96664a8f3404b6a185ad24
   path: ../data/train_prepared.pkl
   cache: true
   metric: false
   persist: false
-- md5: 6fac4b5e7a012fb52254919dfca5a835
+- md5: 9c7fdcb7911e96022c6d616d47d33bee
   path: ../data/test_prepared.pkl
   cache: true
   metric: false
