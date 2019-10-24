@@ -28,7 +28,7 @@ x_train = train.drop(['Survived'], axis = 1)
 y_train = train['Survived']
 
 with mlflow.start_run():
-    max_iter = 800 # Might passed from command line arg....
+    max_iter = 900 # Might passed from command line arg....
 
     mlflow.log_param('lr.max_iter', max_iter)
     mlflow.log_param('some-other-value', 'foo bar ...')
